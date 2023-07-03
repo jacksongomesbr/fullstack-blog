@@ -1,7 +1,6 @@
 import { AppContent } from "@/components";
-// import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 
-// const inter = Inter({ subsets: ["latin"] });
 import "./globals.scss";
 
 export const metadata = {
@@ -14,6 +13,7 @@ export default function RootLayout({ children, session }) {
     <html lang="pt-br">
       <body>
         <AppContent session={session}>{children}</AppContent>
+        <Analytics />
       </body>
     </html>
   );

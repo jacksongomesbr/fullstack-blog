@@ -1,3 +1,4 @@
+import prisma from "@/lib/prisma";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
@@ -15,4 +16,3 @@ export async function POST(request) {
   });
   return NextResponse.json(result);
 }
-
