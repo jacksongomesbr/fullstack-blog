@@ -14,7 +14,7 @@ export default async function Home() {
       updatedAt: "desc",
     },
   });
-
+  console.log(feed);
   const getParteDoConteudo = (post, limite = 60) => {
     if (post.content.length > limite) {
       return post.content.substring(0, limite) + "...";
