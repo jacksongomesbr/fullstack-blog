@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import prisma from "@/lib/prisma";
-
+import { revalidatePath } from "next/cache";
 export async function PUT(request, { params }) {
   const session = await getServerSession(authOptions);
   const { id } = params;
@@ -23,6 +23,7 @@ export async function PUT(request, { params }) {
       },
     },
   });
+  revalidatePath("/");
   return NextResponse.json(result);
 }
 
