@@ -10,7 +10,8 @@
     "update_dependencies": "npm outdated | awk 'NR>1 {print $1\"@\"$4}' | xargs npm install",
     "prisma_format": "npx prisma format",
     "prisma_generate": "npx prisma generate",
-    "prisma_push": "npx prisma db push"
+    "prisma_push": "npx prisma db push",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.7",
